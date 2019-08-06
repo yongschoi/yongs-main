@@ -1,0 +1,91 @@
+spring:
+  profiles:
+    active: window-dev
+
+---
+server:
+  port : 6000
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+  
+spring:
+  profiles: window-dev
+  application:
+    name: yongs-main
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    baseUrl: http://localhost:9411/
+         
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+  client:
+    registerWithEureka: true 
+    fetchRegistry: true
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+hystrix:
+  command:
+    events:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+---
+server:
+  port : 6000
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  profiles: docker-dev
+  application:
+    name: yongs-main
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    baseUrl: http://zipkin-server:9411/
+         
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-server
+  client:
+    registerWithEureka: true 
+    fetchRegistry: true
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+hystrix:
+  command:
+    events:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"     
