@@ -14,9 +14,9 @@ import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import yongs.temp.db.vo.Event;
-import yongs.temp.db.vo.Product;
-import yongs.temp.db.vo.User;
+import yongs.temp.vo.Event;
+import yongs.temp.vo.Product;
+import yongs.temp.vo.User;
 
 @Service
 public class MainService {

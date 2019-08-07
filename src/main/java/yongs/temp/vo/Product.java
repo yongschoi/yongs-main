@@ -1,9 +1,9 @@
-package yongs.temp.db.vo;
+package yongs.temp.vo;
 
-public class Event {
+public class Product {
 	private String no;
 	private String name;
-		
+	
 	public String getNo() {
 		return no;
 	}

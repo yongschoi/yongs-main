@@ -1,14 +1,14 @@
 package yongs.temp.vo;
 
-public class TempVo {
-	private int id;
+public class Event {
+	private String no;
 	private String name;
-	
-	public int getId() {
-		return id;
+		
+	public String getNo() {
+		return no;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setNo(String no) {
+		this.no = no;
 	}
 	public String getName() {
 		return name;

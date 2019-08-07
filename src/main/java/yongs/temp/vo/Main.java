@@ -1,4 +1,4 @@
-package yongs.temp.db.vo;
+package yongs.temp.vo;
 
 import java.util.List;
 

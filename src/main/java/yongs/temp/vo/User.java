@@ -1,6 +1,6 @@
 package yongs.temp.vo;
 
-public class UserVo {
+public class User {
 	private String username;
 	private String password;
 	private int enabled;
@@ -23,4 +23,5 @@ public class UserVo {
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
 	}
+	
 }
