@@ -48,7 +48,7 @@ management:
         
 ---
 server:
-  port: 8080
+  port: 6000
 
 logging:
   level:
