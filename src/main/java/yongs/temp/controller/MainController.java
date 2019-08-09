@@ -1,5 +1,7 @@
 package yongs.temp.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import yongs.temp.service.MainService;
 import yongs.temp.vo.Main;
+import yongs.temp.vo.User;
 
 @RestController
 @RequestMapping("/main")
@@ -28,5 +31,12 @@ public class MainController {
     	main.setEvnets(service.getEvents());
     	
     	return main;
+    }
+    
+    @GetMapping("/users")
+    public List<User> getUsers() throws Exception{
+    	logger.debug("yongs-main|MainController|getUsers()");
+    	
+    	return service.getUsers();
     }
 }
